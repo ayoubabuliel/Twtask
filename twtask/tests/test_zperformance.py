@@ -76,5 +76,5 @@ def test_stress_performance(test_test_stress_performance_info):
         is_like_json_file = is_string_found(r"[{.*}]", i.split("\n")[1])
         if not is_like_json_file:
             assert is_like_json_file, "After number of requests, The output of response of " + \
-                                      i.split("\n")[0] + " isn't like json file,\n The actual response is\n" + \
+                                      i.split("\n")[0] + " isn't like json file,\nThe actual response is\n" + \
                                       i.split("\n")[1]

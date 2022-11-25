@@ -46,7 +46,7 @@ def get_test_verify_id_is_uniq_info():
     """
     here we tell the page indexes of 2 pages that we want to verify if they have uniq players ids
     """
-    return [(1, 18), (2, 19)]
+    return [(1, 18)]
 
 
 @pytest.mark.functionality_test
@@ -67,8 +67,7 @@ def test_verify_id_is_uniq(test_verify_id_is_uniq_info):
     output_page2_list = json.loads(
         utils.run_web_server_request(test_verify_id_is_uniq_info[1], "admin", "admin"))
     for json_object_1 in output_page1_list:
-        json_object_2 = next(
-            filter(lambda x: (x["ID"] == json_object_1["ID"]), output_page2_list))
+        json_object_2 = next(filter(lambda x: (x["ID"] == json_object_1["ID"]), output_page2_list))
         if json_object_2:
             log.info(
                 f"in page {test_verify_id_is_uniq_info[0]} "
