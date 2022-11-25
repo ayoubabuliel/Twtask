@@ -26,5 +26,3 @@ docker run -v <reports folder absolute path>:/home/reports <image name>:<image t
 
 #####################################################################################
 methods and tests are documented in the project, I used pycharm IDE to write my code :)
-
-![image](https://user-images.githubusercontent.com/10289531/203976056-c016aa0f-c9b2-4f95-94fb-8929c20c73ab.png)
