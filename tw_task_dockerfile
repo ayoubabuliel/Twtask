@@ -1,0 +1,23 @@
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get clean
+# Install required software
+RUN apt-get update && apt-get install -y sudo && \
+    apt-get install -y curl && \
+    apt-get install -y nano
+
+# Install python3.8
+RUN apt-get install -y python3-pip && \
+    apt-get install -y software-properties-common vim && \
+    sudo apt-get install python3.8 -y
+
+# Define default command
+CMD ["bash"]
+
+# Copy the project
+COPY ./twtask /home/twtask
+
+# Install the requirements.txt of the project
+RUN pip3 install -r /home/twtask/requirements.txt
+
+RUN chmod +x /home/twtask/web_server/twtask
